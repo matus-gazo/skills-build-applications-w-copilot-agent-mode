@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-lh@sw3)(8&n+1adtjodpajoln-zfbk7*1s4@*08ao3v0o8w+ch
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -51,6 +51,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
 ]
 
 ROOT_URLCONF = "octofit_tracker.urls"
@@ -80,7 +81,7 @@ WSGI_APPLICATION = "octofit_tracker.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'monafit_db',
+        'NAME': 'octofit_db',
         'HOST': 'localhost',
         'PORT': 27017,
     }
